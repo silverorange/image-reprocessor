@@ -116,9 +116,12 @@ class ImageReprocessor extends SiteApplication
 		);
 
 		$image->setFileBase($this->cli->args['directory']);
-		$image->processMissingDimensionsFromLargestDimension();
-
-		$this->logger->info('done' . PHP_EOL);
+		try {
+			$image->processMissingDimensionsFromLargestDimension();
+			$this->logger->info('done' . PHP_EOL);
+		} catch (SiteInvalidImageDimensionException $e) {
+			$this->logger->info('failed (no dimension exists)' . PHP_EOL);
+		}
 	}
 
 	// }}}
