@@ -15,11 +15,14 @@
 		<action>StoreFalse</action>
 		<default>true</default>
 	</option>
+	<argument name="dsn">
+		<description>Database DSN in MDB2 format (e.g. pgsql://username@host/database).</description>
+	</argument>
+	<argument name="directory">
+		<description>Storage location for image files.</description>
+	</argument>
 	<argument name="image_set">
 		<description>The image set shortname to re-process.</description>
 		<help_name>image-set</help_name>
-	</argument>
-	<argument name="dsn">
-		<description>Database DSN in MDB2 format (e.g. pgsql://username@host/database).</description>
 	</argument>
 </command>

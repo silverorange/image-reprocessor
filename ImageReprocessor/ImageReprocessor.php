@@ -115,6 +115,8 @@ class ImageReprocessor extends SiteApplication
 			)
 		);
 
+		$image->setFileBase($this->cli->args['directory']);
+		$image->processMissingDimensionsFromLargestDimension();
 
 		$this->logger->info('done' . PHP_EOL);
 	}
@@ -134,6 +136,11 @@ class ImageReprocessor extends SiteApplication
 				),
 				'SiteImageWrapper'
 			);
+
+			// Assign existing image set object for efficiency.
+			foreach ($this->images as $image) {
+				$image->image_set = $this->getImageSet();
+			}
 		}
 
 		return $this->images;
@@ -154,6 +161,9 @@ class ImageReprocessor extends SiteApplication
 				),
 				'SiteImageSetWrapper'
 			)->getFirst();
+
+			// Set CDN flag on image set before processing.
+			$this->image_set->use_cdn = $this->cli->options['cdn'];
 		}
 
 		return $this->image_set;
