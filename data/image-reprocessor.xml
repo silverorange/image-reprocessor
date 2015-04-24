@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<command>
+	<description>Re-processes all images in an image set and queues them for CDN upload.</description>
+	<version>1.0</version>
+	<option name="verbose">
+		<short_name>-v</short_name>
+		<long_name>--verbose</long_name>
+		<description>Set verbosity level. Use multiples for more detail (e.g. "-vv".)</description>
+		<action>Counter</action>
+		<default>1</default>
+	</option>
+	<option name="cdn">
+		<long_name>--no-cdn</long_name>
+		<description>Don't queue images for upload to CDN after processing.</description>
+		<action>StoreFalse</action>
+		<default>true</default>
+	</option>
+	<argument name="image_set">
+		<description>The image set shortname to re-process.</description>
+		<help_name>image-set</help_name>
+	</argument>
+	<argument name="dsn">
+		<description>Database DSN in MDB2 format (e.g. pgsql://username@host/database).</description>
+	</argument>
+</command>
