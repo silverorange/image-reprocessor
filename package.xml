@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.5" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>ImageReprocessor</name>
+ <channel>pear.silverorange.com</channel>
+ <summary>Processes missing image dimension bindings.</summary>
+ <description>Processes missing image dimension bindings for an entire set in the silverorange Site framework.</description>
+ <lead>
+  <name>Mike Gauthier</name>
+  <user>gauthierm</user>
+  <email>mike@silverorange.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2015-04-30</date>
+ <time>15:39:05</time>
+ <version>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>beta</api>
+ </stability>
+ <license uri="http://www.gnu.org/copyleft/lesser.html LGPL License 2.1">LGPL License</license>
+ <notes>
+beta release
+ </notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <dir name="bin">
+    <file baseinstalldir="/" name="image-reprocessor.php" role="script">
+     <tasks:replace from="@data-dir@" to="data_dir" type="pear-config" />
+     <tasks:replace from="@package-name@" to="name" type="package-info" />
+    </file>
+   </dir> <!-- /bin -->
+   <dir name="data">
+    <file baseinstalldir="/" name="image-reprocessor.xml" role="data" />
+   </dir> <!-- /data -->
+   <dir name="ImageReprocessor">
+    <file baseinstalldir="/" name="ImageReprocessor.php" role="php" />
+   </dir> <!-- /ImageReprocessor -->
+   <file baseinstalldir="/" name="README.md" role="doc" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.3.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0</min>
+   </pearinstaller>
+   <package>
+    <name>Site</name>
+    <channel>pear.silverorange.com</channel>
+    <min>2.1.35</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease>
+  <filelist>
+   <install as="image-reprocessor" name="bin/image-reprocessor.php" />
+  </filelist>
+ </phprelease>
+ <changelog>
+  <release>
+   <version>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2015-04-30</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html LGPL License 2.1">LGPL License</license>
+   <notes>
+beta release
+   </notes>
+  </release>
+ </changelog>
+</package>
