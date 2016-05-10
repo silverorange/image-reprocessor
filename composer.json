@@ -1,0 +1,32 @@
+{
+	"name": "silverorange/image_reprocessor",
+	"description": "Processes missing image dimension bindings for an entire set in the silverorange Site framework.",
+	"type": "library",
+	"keywords": [ "image", "dimension", "reprocess" ],
+	"homepage": "https://github.com/silverorange/image-reprocessor",
+	"license": "LGPL-2.1",
+	"authors": [
+		{
+			"name": "Charles Waddell",
+			"email": "charles@silverorange.com"
+		},
+		{
+			"name": "Michael Gauthier",
+			"email": "mike@silverorange.com"
+		}
+	],
+	"bin": [
+		"bin/image-reprocessor.php"
+	],
+	"require": {
+		"php": ">=5.3.0",
+		"psr/log": "^1.0.0",
+		"silverorange/site": "^2.2.0"
+	},
+	"autoload": {
+		"classmap": [ "ImageReprocessor/" ]
+	},
+	"include-path": [
+		"./"
+	]
+}
